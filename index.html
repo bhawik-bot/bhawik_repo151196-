@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+            .container{
+                border-radius: 25px;
+                margin: 20px 450px;
+                height: 800px;
+                width: 500px;
+                background-color:#cceeff;
+               }
+               #detail{
+                 margin-top: 20px;
+                 font-weight: bolder;
+                 font-size: 30px;
+               }
+          
+           
+
+            .loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #e70303;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+           
+     </style>
+
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+<script src="./index.js"></script>
+
+    </head>
+   
+    <body>
+       <center><p id="detail">Token Name: GELT,&nbsp;&nbsp;Symbol: GELT,&nbsp;&nbsp;Initial Supply: 63,25,314</p></center><br>
+        <div class="container"><br><br>
+            
+                <div class="form-group" id="mintToken">
+              
+                  <center><label for="mint">Mint Token</label></center>
+                 
+                  <input type="number" class="form-control" id="mintAmount" placeholder="Enter amount">  <br>
+                  <center><input type="button" onclick="tokenMint()" id="mintButton" class="btn btn-primary" value="Mint Token"></center><br>
+                  <center><div class="loader" id="mintLoader"></div></center>
+              
+                </div><br>
+                <div class="form-group">
+                 <center><label for="Transfer Token">Transfer Token</label></center> 
+                  <input type="text" class="form-control" id="transferAddress" placeholder="Enter address"><br>
+                 <input type="number" class="form-control" id="transferAmount" placeholder="Enter Amount"><br>
+                  <center><button onclick="transferToken()" id="mintButton"  class="btn btn-success">Tranfer Token</button></center><br>
+                    <center><div class="loader" id="transferLoader"></div></center>
+                
+                  </div><br></center>
+                <div class="form-group">
+                  <center><label for="burn Token">Burn Token</label></center> 
+                    <input type="number" class="form-control" id="burnAmount" placeholder="Enter Amount"><br>
+                    <center><button onclick="burnToken()" id="burnButton"  class="btn btn-danger">Burn Token</button></center><br>
+                    <center><div class="loader" id="burnLoader"></div></center>
+               </div><br>
+               <div class="form-group">
+                <center><label for="balance">Check Balance</label></center> 
+                  <input type="text" class="form-control" id="balanceAddress" placeholder="Enter Address"><br>
+                  <center><button onclick="checkBalance()" id="balanceButton"  class="btn btn-success">Show Balance</button></center><br>
+                  <center><span id="show"></span></center>
+             
+                  
+                </div>
+              
+                
+        </div>
+      
+    </body>
+</html>
